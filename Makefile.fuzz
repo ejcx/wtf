@@ -1,0 +1,23 @@
+AFL_TARNAME:=afl-latest
+AFL_VERSION:=2.38b
+CC:=afl-$(AFL_VERSION)/afl-gcc CXX=afl-$(AFL_VERSION)/afl-g++
+
+clean:
+	rm -rf bin
+	rm -rf afl-$(AFL_VERSION)
+
+make-bin:
+	mkdir -p bin
+
+make-afl: unpack-afl
+	cd afl-$(AFL_VERSION) && make
+	
+unpack-afl:
+	tar -zxf $(AFL_TARNAME).tgz
+
+exit: clean make-bin make-afl make-bin
+	mkdir -p out/exit-test
+	gcc src/exit.c -o bin/exit
+	afl-$(AFL_VERSION)/afl-fuzz -i test-cases/exit-test -o out/exit-test bin/exit
+	
+
