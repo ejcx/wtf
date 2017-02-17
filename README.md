@@ -1,2 +1,2 @@
-# FUZZOPEDIA
-Get fuzzing quickly and easily using afl and docker.
+# What the fuzz!
+Simplified, pre-packaged, artisinal, hand-crafted fuzzing with AFL.

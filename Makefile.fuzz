@@ -1,7 +1,7 @@
 AFL_TARNAME:=afl-latest
 AFL_VERSION:=2.38b
-CC:=afl-$(AFL_VERSION)/afl-gcc
-CXX:=afl-$(AFL_VERSION)/afl-g++
+CC:=/afl-$(AFL_VERSION)/afl-gcc
+CXX:=/afl-$(AFL_VERSION)/afl-g++
 
 .PHONY: clean
 clean:
@@ -9,7 +9,7 @@ clean:
 
 make-afl: unpack-afl
 	cd afl-$(AFL_VERSION) && make
-	
+
 unpack-afl:
 	tar -zxf $(AFL_TARNAME).tgz
 
@@ -17,3 +17,10 @@ exit: clean make-afl
 	mkdir -p out/exit-test
 	$(CC) src/exit.c -o exit
 	afl-$(AFL_VERSION)/afl-fuzz -i test-cases/exit-test -o out/exit-test ./exit
+
+cpython: clean make-afl
+	apt-get install python
+	cd src/cpython-3.4.6 && CC=$(CC) ./configure && make
+
+jq: clean make-afl
+	cd src/jq-jq-1.5 && CC=$(CC) ./configure && make
