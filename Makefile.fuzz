@@ -2,6 +2,7 @@ AFL_TARNAME:=afl-latest
 AFL_VERSION:=2.38b
 CC:=/afl-$(AFL_VERSION)/afl-gcc
 CXX:=/afl-$(AFL_VERSION)/afl-g++
+AFL:=/afl-$(AFL_VERSION)/afl-fuzz
 
 .PHONY: clean
 clean:
@@ -24,3 +25,4 @@ cpython: clean make-afl
 
 jq: clean make-afl
 	cd src/jq-jq-1.5 && CC=$(CC) ./configure && make
+	cd src/jq-jq-1.5 && /.$(AFL) -i /fuzz/jq/in -o /fuzz/jq/out -- /src/jq-jq-1.5/jq '.'
