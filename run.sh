@@ -1,3 +1,4 @@
 #!/bin/bash
-make -f Makefile.fuzz
+go run crashbot/crashbot.go
+make -f Makefile.fuzz jq
 
