@@ -1,10 +1,9 @@
 # What the fuzz!
-Simplified, pre-packaged, artisinal, hand-crafted fuzzing with AFL.
+Simplified, pre-packaged, artisinal, hand-crafted, dockerized fuzzing with AFL.
 
-# How does this work.
-Run doesn't actually run anything yet.
+# Fuzzing jq.
+
 ```
-  docker build .
-  docker run -it <image_id> /bin/bash
-  make -f Makefile.fuzz jq
+docker build --build-arg fuzztgt=jq  .
+docker run ...
 ```

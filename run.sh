@@ -1,4 +1,3 @@
 #!/bin/bash
-go run crashbot/crashbot.go
-make -f Makefile.fuzz jq
-
+./crashbot -project=$1 -bucket=whatthefuzz &
+make -f Makefile.fuzz $1
