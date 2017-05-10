@@ -26,3 +26,7 @@ cpython: clean make-afl
 jq: clean make-afl
 	cd src/jq-jq-1.5 && CC=$(CC) ./configure && make
 	cd src/jq-jq-1.5 && /.$(AFL) -i /fuzz/jq/in -o /fuzz/jq/out -- /src/jq-jq-1.5/jq '.'
+
+jqvuln: clean make-afl
+	cd src/jq-jq-1.5-vuln && CC=$(CC) ./configure && make
+	cd src/jq-jq-1.5-vuln && /.$(AFL) -i /fuzz/jqvuln/in -o /fuzz/jqvuln/out -- /src/jq-jq-1.5-vuln/jq '.'
