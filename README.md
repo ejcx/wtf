@@ -28,3 +28,9 @@ details in `crashbot/crashbot.go`. You don't need to know
 Golang to do this. You'll see a revoked old pair of S3
 credentials are currently there to guide you.
 
+### Writing Tests
+AFL requires tests to seed the fuzzing process.
+
+All tests live in `fuzz/<program_name>/in`
+
+Feel free to contribute new tests to these directories.
