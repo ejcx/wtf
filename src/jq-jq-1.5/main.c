@@ -176,25 +176,6 @@ int main(int argc, char* argv[]) {
   int badwrite;
   jv program_arguments = jv_array();
 
-#ifdef WIN32
-  SetConsoleOutputCP(CP_UTF8);
-  fflush(stdout);
-  fflush(stderr);
-  _setmode(fileno(stdout), _O_TEXT | _O_U8TEXT);
-  _setmode(fileno(stderr), _O_TEXT | _O_U8TEXT);
-  int wargc;
-  wchar_t **wargv = CommandLineToArgvW(GetCommandLineW(), &wargc);
-  assert(wargc == argc);
-  size_t arg_sz;
-  for (int i = 0; i < argc; i++) {
-    argv[i] = alloca((arg_sz = WideCharToMultiByte(CP_UTF8,
-                                                   0,
-                                                   wargv[i],
-                                                   -1, 0, 0, 0, 0)));
-    WideCharToMultiByte(CP_UTF8, 0, wargv[i], -1, argv[i], arg_sz, 0, 0);
-  }
-#endif
-
   if (argc) progname = argv[0];
 
   jq = jq_init();
@@ -225,7 +206,13 @@ int main(int argc, char* argv[]) {
         jq_util_input_add_input(input_state, argv[i]);
         nfiles++;
       } else {
-        program = argv[i];
+        // Read the first line of stdin and let the
+        // program continue reading from stdin later.
+        size_t s;
+        if (getline(&program, &s, stdin) == -1) {
+          die();
+        }
+        //program = argv[i];
       }
     } else {
       if (argv[i][1] == 'L') {
@@ -345,6 +332,7 @@ int main(int argc, char* argv[]) {
           fprintf(stderr, "%s: --argjson takes two parameters (e.g. --argjson varname text)\n", progname);
           die();
         }
+        printf("%s\n", argv[i+2]);
         jv v = jv_parse(argv[i+2]);
         if (!jv_is_valid(v)) {
           fprintf(stderr, "%s: invalid JSON text passed to --argjson\n", progname);
@@ -425,11 +413,6 @@ int main(int argc, char* argv[]) {
 
   if (isatty(fileno(stdout))) {
     dumpopts |= JV_PRINT_ISATTY;
-#ifndef WIN32
-  /* Disable colour by default on Windows builds as Windows
-     terminals tend not to display it correctly */
-    dumpopts |= JV_PRINT_COLOUR;
-#endif
   }
   if (options & SORTED_OUTPUT) dumpopts |= JV_PRINT_SORTED;
   if (options & ASCII_OUTPUT) dumpopts |= JV_PRINT_ASCII;

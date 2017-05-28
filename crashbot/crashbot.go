@@ -21,10 +21,10 @@ var (
 	dev     = flag.Bool("dev", false, "whether or not this is in dev mode.")
 
 	// INSERT YOUR SECRET HERE. Don't worry. These are long revoked.
-	// S3Access = "AKIAJ4JS44QR4IIE2TMQ"
-	// S3Secret = "E0p2/6qd7eN95FH1NYwJHouyGA6JUYFUZq2yN5js"
-	svc  *s3.S3
-	sess *session.Session
+	S3Access = "AKIAJ4JS44QR4IIE2TMQ"
+	S3Secret = "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"
+	svc      *s3.S3
+	sess     *session.Session
 )
 
 func handleEvents(ev *fsnotify.FileEvent) {

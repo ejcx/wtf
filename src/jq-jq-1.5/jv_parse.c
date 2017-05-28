@@ -848,5 +848,7 @@ jv jv_parse_sized(const char* string, int length) {
 }
 
 jv jv_parse(const char* string) {
+  fprintf(stderr, "%s\n", "HEYYYYYYYYYYYYYY");
+  fprintf(stderr, "%s\n", string);
   return jv_parse_sized(string, strlen(string));
 }
