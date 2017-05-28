@@ -1,0 +1,367 @@
+# translation of jwhois-3.2.2.tr.po to Turkish
+# JWhois Turkish Translation
+# Copyright (C) 2002, 2005 Free Software Foundation, Inc.
+# İrfan Macit <imacit@mail.cu.edu.tr>, 2002.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: jwhois 3.2.2\n"
+"Report-Msgid-Bugs-To: bug-jwhois@gnu.org\n"
+"POT-Creation-Date: 2007-02-14 14:08+0530\n"
+"PO-Revision-Date: 2005-03-14 04:45+0200\n"
+"Last-Translator: İrfan Macit <imacit@mail.cu.edu.tr>\n"
+"Language-Team: Turkish <gnu-tr-u12a@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
+
+#: src/cache.c:142
+msgid "Invalid expire time"
+msgstr "Hükümsüz geçerlilik süresi"
+
+#: src/cache.c:155 src/init.c:270 src/init.c:279
+msgid "Unable to open"
+msgstr "Açılamıyor"
+
+#: src/cache.c:164
+#, fuzzy
+msgid "Unable to store data in cache\n"
+msgstr "Veri arabellekte saklanamadı\n"
+
+#: src/dns.c:93
+msgid "host not found"
+msgstr "Makina bulunamadı"
+
+#: src/gai_strerror.c:61
+msgid "Address family for hostname not supported"
+msgstr "Makina ismi için adres ailesi desteklenmiyor"
+
+#: src/gai_strerror.c:63
+msgid "Temporary failure in name resolution"
+msgstr "İsim çözümlemede geçici hata"
+
+#: src/gai_strerror.c:65
+msgid "Bad value for ai_flags"
+msgstr "ai_flags için hatalı değer"
+
+#: src/gai_strerror.c:67
+msgid "Non-recoverable failure in name resolution"
+msgstr "İsim çözümlemede onarılamayan hata"
+
+#: src/gai_strerror.c:69
+msgid "ai_family not supported"
+msgstr "ai_family desteklenmiyor"
+
+#: src/gai_strerror.c:71
+msgid "Memory allocation failure"
+msgstr "Bellek ayırma hatası"
+
+#: src/gai_strerror.c:73
+msgid "No address associated with hostname"
+msgstr "Makina ismi ile ilişkili adres yok"
+
+#: src/gai_strerror.c:75
+msgid "Name or service not known"
+msgstr "İsim ya da servis bilinmiyor"
+
+#: src/gai_strerror.c:77
+msgid "Servname not supported for ai_socktype"
+msgstr "Servis adı ai_socktype için desteklenmiyor"
+
+#: src/gai_strerror.c:79
+msgid "ai_socktype not supported"
+msgstr "ai_socktype desteklenmiyor"
+
+#: src/gai_strerror.c:81
+msgid "System error"
+msgstr "Sistem hatası"
+
+#: src/gai_strerror.c:83
+msgid "Unknown error"
+msgstr "Bilinmeyen hata"
+
+#: src/getopt.c:678
+#, c-format
+msgid "%s: option `%s' is ambiguous\n"
+msgstr "%s: %s seçeneği belirsiz\n"
+
+#: src/getopt.c:703
+#, c-format
+msgid "%s: option `--%s' doesn't allow an argument\n"
+msgstr "%s: `--%s' seçeneği bir argümana izin vermiyor\n"
+
+#: src/getopt.c:708
+#, c-format
+msgid "%s: option `%c%s' doesn't allow an argument\n"
+msgstr "%s: `%c%s' seçeneği bir argümana izin vermiyor\n"
+
+#: src/getopt.c:726 src/getopt.c:899
+#, c-format
+msgid "%s: option `%s' requires an argument\n"
+msgstr "%s:`%s'seçeneği bir argüman gerektiriyor\n"
+
+#: src/getopt.c:755
+#, c-format
+msgid "%s: unrecognized option `--%s'\n"
+msgstr "%s: bilinmeyen seçenek `--%s'\n"
+
+#: src/getopt.c:759
+#, c-format
+msgid "%s: unrecognized option `%c%s'\n"
+msgstr "%s: bilinmeyen seçenek `%c%s'\n"
+
+#: src/getopt.c:785
+#, c-format
+msgid "%s: illegal option -- %c\n"
+msgstr "%s: kuraldışı seçenek -- %c\n"
+
+#: src/getopt.c:788
+#, c-format
+msgid "%s: invalid option -- %c\n"
+msgstr "%s: geçersiz seçenek -- %c\n"
+
+#: src/getopt.c:818 src/getopt.c:948
+#, c-format
+msgid "%s: option requires an argument -- %c\n"
+msgstr "%s: -- %c seçeneği bir argüman gerektiriyor\n"
+
+#: src/getopt.c:865
+#, c-format
+msgid "%s: option `-W %s' is ambiguous\n"
+msgstr "%s: `-W %s' seçeneği belirsiz\n"
+
+#: src/getopt.c:883
+#, c-format
+msgid "%s: option `-W %s' doesn't allow an argument\n"
+msgstr "%s: `-W %s' seçeneği bir argümana izin vermiyor\n"
+
+#: src/http.c:72
+msgid "HTTP configuration is incomplete:"
+msgstr "HTTP konfigürasyonu tamamlanmamış:"
+
+#: src/http.c:73 src/http.c:74 src/http.c:75 src/http.c:93 src/http.c:102
+#: src/http.c:167
+msgid "Option is missing:"
+msgstr "Eksik seçenek:"
+
+#: src/http.c:85
+msgid "Option http-method must be \"GET\" or \"POST\".\n"
+msgstr "http-method seçeneği \"GET\" yada \"POST\" olmalı.\n"
+
+#: src/http.c:196
+msgid "Unable to create temporary file"
+msgstr "Geçici dosya oluşturulamadı"
+
+#: src/http.c:247 src/lookup.c:452 src/rwhois.c:130 src/whois.c:62
+msgid "Querying"
+msgstr "Sorgulanıyor"
+
+#: src/http.c:277
+msgid "Unable to run web browser"
+msgstr "Web tarayıcısı çalıştırılamıyor"
+
+#: src/init.c:119
+#, c-format
+msgid "Copyright (C) 1999-%d  Free Software Foundation, Inc.\n"
+msgstr "Telif Hakkı (C) 1999-%d  Free Software Foundation, Inc.\n"
+
+#: src/init.c:120
+msgid ""
+"This program is free software with ABSOLUTELY NO WARRANTY; you may\n"
+"redistribute it under the terms of the GNU General Public License."
+msgstr ""
+"Bu, HİÇ BİR GARANTİ İÇERMEYEN bir serbest yazılımdır; GNU Genel Kamu "
+"Lisansı\n"
+"koşulları altında yeniden dağıtabilirsiniz."
+
+#: src/init.c:123
+msgid "version"
+msgstr "sürüm"
+
+#: src/init.c:128
+msgid "Usage: jwhois [OPTIONS] [QUERY]"
+msgstr "Kullanım: jwhois [SEÇENEKLER] [SORGU]"
+
+#: src/init.c:130
+#, c-format
+msgid ""
+"  --version                  display version number and patch level\n"
+"  --help                     display this help\n"
+"  -v, --verbose              verbose debug output\n"
+"  -c FILE, --config=FILE     use FILE as configuration file\n"
+"  -h HOST, --host=HOST       explicitly query HOST\n"
+"  -n, --no-redirect          disable content redirection\n"
+"  -s, --no-whoisservers      disable whois-servers.net service support\n"
+"  -a, --raw                  disable reformatting of the query\n"
+"  -i, --display-redirections display all redirects instead of hiding them\n"
+"  -p PORT, --port=PORT       use port number PORT (in conjunction with "
+"HOST)\n"
+"  -r, --rwhois               force an rwhois query to be made\n"
+"  --rwhois-display=DISPLAY   sets the display option in rwhois queries\n"
+"  --rwhois-limit=LIMIT       sets the maximum number of matches to return\n"
+msgstr ""
+"  --version                  yama seviyesi ve sürüm numarasını gösterir\n"
+"  --help                     bu yardımı gösterir\n"
+"  -v, --verbose              detaylı hata bilgisi verir\n"
+"  -c DOSYA, --config=DOSYA   ayar dosyası olarak DOSYA'yı kullanır\n"
+"  -h MAK, --host=MAK         özellikle MAK makinasını sorgular\n"
+"  -n, --no-redirect          içerik yönlendirmesini etkisizleştirir\n"
+"  -s, --no-whoisservers      whois-servers.net servis desteğini "
+"etkisizleştirir\n"
+"  -a, --raw                  sorgunun tekrar biçemlenmesini etkisizleştirir\n"
+"  -i, --display-redirections tekrar yönlendirmeleri gizlemek yerine "
+"gösterir\n"
+"  -p PORT, --port=PORT       PORT numarasını kullanır (MAK ile birlikte)\n"
+"  -r, --rwhois               rwhois sorgusuna zorlar\n"
+"  --rwhois-display=EKRAN     rwhois sorgularında ekran seçeneklerini "
+"ayarlar\n"
+"  --rwhois-limit=SINIR       verilecek cevap sayısını sınırlar\n"
+
+#: src/init.c:145
+#, c-format
+msgid ""
+"  -f, --force-lookup         force lookup even if the entry is cached\n"
+"  -d, --disable-cache        disable cache functions\n"
+msgstr ""
+"  -f, --force-lookup         girdi arabellekte olsa bile tekrar sorgular\n"
+"  -d, --disable-cache        ara bellek fonksiyonlarını etkisizleştirir\n"
+
+#: src/init.c:148
+msgid "Report bugs to bug-jwhois@gnu.org"
+msgstr ""
+"Yazılım hatalarını <bug-jwhois@gnu.org> adresine\n"
+"çeviri hatalarını <gnu-tr@belgeler.org> adresine bildirin"
+
+#: src/init.c:233
+msgid "Invalid limit"
+msgstr "Geçersiz sınır"
+
+#: src/init.c:247
+msgid "Invalid port number"
+msgstr "Geçersiz port numarası"
+
+#: src/jconfig.c:245 src/jconfig.c:265 src/jconfig.c:317 src/jconfig.c:373
+#: src/jwhois.c:110 src/jwhois.c:159 src/lookup.c:631 src/lookup.c:734
+#: src/utils.c:101 src/utils.c:111 src/whois.c:76
+msgid "Error allocating memory"
+msgstr "Bellek ayrımında hata"
+
+#: src/jconfig.c:273 src/jconfig.c:325
+msgid "String out of bounds on line"
+msgstr "Satırdaki dizge sınırları dışına çıkmış"
+
+#: src/jconfig.c:299
+msgid "End of file looking for '\"' on line"
+msgstr "Satırda '\"' aranırken dosya sonu bulundu"
+
+#: src/jconfig.c:354
+msgid "Unexpected end of file on line"
+msgstr "Satırda beklenmeyen dosya sonu"
+
+#: src/jconfig.c:423
+msgid "Multiple keys on line"
+msgstr "Satırda çoklu anahtar"
+
+#: src/jconfig.c:433
+msgid "Missing key on line"
+msgstr "Satırda kayıp anahtar"
+
+#: src/jwhois.c:148
+msgid "Fatal error searching for host to query"
+msgstr "Sorgulama için makina ararken ölümcül hata"
+
+#: src/jwhois.c:170
+msgid "Error reading cache"
+msgstr "Arabellek okumada hata"
+
+#: src/jwhois.c:175
+msgid "Cached"
+msgstr "Arabelleklendi"
+
+#: src/jwhois.c:189
+msgid "Error writing to cache"
+msgstr "Arabelleğe yazma hatası"
+
+#: src/lookup.c:110
+msgid "Invalid netmask on line"
+msgstr "Satırda geçersiz ağ maskesi"
+
+#: src/lookup.c:214
+#, c-format
+msgid "[%s: Missing prefix length on line %d]\n"
+msgstr ""
+
+#: src/lookup.c:220
+#, c-format
+msgid "[%s: Invalid prefix length on line %d]\n"
+msgstr ""
+
+#: src/lookup.c:232
+#, fuzzy, c-format
+msgid "[%s: Invalid network address on line %d]\n"
+msgstr "Satırda geçersiz ağ maskesi"
+
+#: src/lookup.c:437
+msgid "Warning: Configuration file contains references to IPv6,"
+msgstr ""
+
+#: src/lookup.c:438
+msgid "         but jwhois was compiled without IPv6 support."
+msgstr ""
+
+#: src/lookup.c:552 src/lookup.c:556
+msgid "Redirected to"
+msgstr "Yönlendirildi"
+
+#: src/rwhois.c:138 src/whois.c:70
+#, c-format
+msgid "[Unable to connect to remote host]\n"
+msgstr "[Uzak makinaya bağlantı başarısız]\n"
+
+#: src/rwhois.c:159
+#, c-format
+msgid "[RWHOIS: Protocol error while sending -rwhois option]\n"
+msgstr "[RWHOIS: -rwhois seçeneği gönderilirken protokol hatası]\n"
+
+#: src/rwhois.c:197
+msgid "Server does not support display command"
+msgstr "Sunucu \"display\" (görüntüle) komutunu desteklemiyor"
+
+#: src/rwhois.c:212
+msgid "Invalid limit in configuration file"
+msgstr "Konfigürasyon dosyasında geçersiz sınır"
+
+#: src/rwhois.c:236
+msgid "Server does not support limit"
+msgstr "Sunucu sınırı desteklemiyor"
+
+#: src/rwhois.c:278
+msgid "Unknown referral"
+msgstr "Bilinmeyen başvuru"
+
+#: src/rwhois.c:370
+msgid "Following referral to"
+msgstr "Başvuru izleniyor"
+
+#: src/rwhois.c:399
+#, c-format
+msgid "[Host terminated connection prematurely]\n"
+msgstr "[Makina bağlantıyı zamanından önce sonlandırdı]\n"
+
+#: src/rwhois.c:475
+msgid "Unhandled reply"
+msgstr "Desteklenmeyen yanıt"
+
+#: src/utils.c:262
+msgid "Error creating socket"
+msgstr "Soket oluşturma hatası"
+
+#: src/utils.c:348
+#, fuzzy
+msgid "Invalid connect timeout value"
+msgstr "Satırda geçersiz ağ maskesi"
+
+#: src/whois.c:88
+msgid "Error reading data from"
+msgstr "Veri okuma hatası"

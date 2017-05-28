@@ -1,0 +1,535 @@
+\input texinfo  @c -*-texinfo-*-
+@c %**start of header
+@setfilename jwhois.info
+@settitle jwhois, Whois client
+@c %**end of header
+
+@direntry
+* jwhois: (jwhois).     Whois client.
+@end direntry
+
+@c This file has the new style title page commands.
+@c Run `makeinfo' rather than `texinfo-format-buffer'.
+
+@c smallbook
+
+@c tex
+@c \overfullrule=0pt
+@c end tex
+
+@c Combine indices.
+@synindex cp fn
+@syncodeindex vr fn
+@syncodeindex ky fn
+@syncodeindex pg fn
+@syncodeindex tp fn
+
+@ifinfo
+This file documents @sc{jwhois}, a Whois client.
+
+Copyright (C) 1999-2005  Free Software Foundation, Inc.
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1 or
+any later version published by the Free Software Foundation; with no
+Invariant Sections, with the Front-Cover Texts being ``A GNU Manual,''
+and with the Back-Cover Texts as in (a) below.  A copy of the
+license is included in the section entitled ``GNU Free Documentation
+License.''
+
+(a) The FSF's Back-Cover Text is: ``You have freedom to copy and modify
+this GNU Manual, like GNU software.  Copies published by the Free
+Software Foundation raise funds for GNU development.''
+
+@end ifinfo
+
+@setchapternewpage off
+
+@titlepage
+@title jwhois
+@subtitle Version 3.2.3
+@subtitle 10 July 2005
+@author Jonas Öberg @code{(jonas@@gnu.org)}
+
+@page
+@vskip 0pt plus 1filll
+Copyright @copyright{} 1999-2005  Free Software Foundation, Inc.
+
+@sp 2
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1 or
+any later version published by the Free Software Foundation; with no
+Invariant Sections, with the Front-Cover Texts being ``A GNU Manual,''
+and with the Back-Cover Texts as in (a) below.  A copy of the
+license is included in the section entitled ``GNU Free Documentation
+License.''
+
+(a) The FSF's Back-Cover Text is: ``You have freedom to copy and modify
+this GNU Manual, like GNU software.  Copies published by the Free
+Software Foundation raise funds for GNU development.''
+@end titlepage
+@page
+
+@node Top, Introduction, (dir), (dir)
+
+This file documents the GNU jwhois package, en extended Whois client.
+This is edition 3.2.1, for jwhois version 3.2.3, last updated 30 June 2002.
+
+@menu
+* Introduction::                Introduction
+* Invocation::                  How to invoke jwhois
+* Site Configuration::          Syntax of the configuration file
+* RIPE Extensions::             Extensions for RIPE databases
+* Reporting bugs::              Reporting bugs
+
+@detailmenu
+ --- The Detailed Node Listing ---
+
+Site Configuration
+
+* Global options::              Global configuration options
+* Whois servers::               Syntax for selecting whois servers
+* Server options::              Syntax for server options
+
+@end detailmenu
+@end menu
+
+@node Introduction, Invocation, Top, Top
+@chapter Introduction
+
+@sc{jwhois} is an Internet Whois client that contains an extensible
+configuration file which defines its operation. The client supports
+queries to foreign hosts either through the RFC 954 - NICNAME/WHOIS
+protocol, the RFC 2167 - Referral Whois 1.5 protocol, or HTTP using
+an external browser.
+
+Upon execution, @sc{jwhois} searches through the its configuration
+to find the most specific whois server to query. Depending upon the
+reply from that whois server, @sc{jwhois} can assume the query was
+successfull and display the result to the user, or optionally redirect
+the query to another server to find more specific information.
+
+@node Invocation, Site Configuration, Introduction, Top
+@chapter Invocation
+
+@sc{jwhois} uses the following command-line options:
+@table @samp
+
+@item --version
+Print the program version and licensing information.
+
+@item --help
+Print a usage message summarizing the command-line options.
+
+@item -c FILE
+@item --config=FILE
+Reads configuration from FILE instead of from the default
+system global configuration file.
+
+@item -h HOST
+@item --host=HOST
+Overrides any specifications in the configuration file and queries HOST
+directly.
+
+@item -p PORT
+@item --port=PORT
+Specifies a port number to use when querying a HOST
+
+@item -f
+@item --force-lookup
+Forces a query to be made to a host even if a current object
+is available from the cache.
+
+@item -v
+@item --verbose
+Outputs verbose debugging information while running (use this before
+sending a bugreport to ensure that it's indeed a bug and not a 
+misconfiguration). You can increase the verbosity by giving several
+verbose commands to jwhois, such as @samp{-vv}.
+
+@item -n
+@item --no-redirect
+Disable features that redirect queries from one server to another.
+
+@item -s
+@item --no-whoisservers
+Disable the built-in support for whois-servers.net.
+
+@item -a
+@item --raw
+Send query verbatim to receiving hosts instead of rewriting them according
+to the configuration.
+
+@item -i
+@item --display-redirections
+Display every step in a redirection (default is to display only the
+last answer).
+
+@item -d
+@item --disable-cache
+Completely disable both reading and writing to cache
+
+@item -r
+@item --rwhois
+Force the query to use the rwhois protocoll instead of HTTP or whois.
+
+@item --rwhois-display=DISPLAY
+Asks receiving rwhois servers to display the results in the DISPLAY display
+instead of the default dump display.
+
+@item --rwhois-limit=LIMIT
+asks receiving rwhois servers to limit their responses to LIMIT matches.
+
+@end table
+
+The query can optionally contain the character @samp{@@} followed by
+a host name to direct the search to that host. This works exactly like
+specifying the host with @samp{--host} or @samp{-h}.
+
+@node Site Configuration, Global options, Invocation, Top
+@chapter Site Configuration
+
+@sc{jwhois} is configurable via its configuration file, normally
+called @file{jwhois.conf}. This file is looked for in the sysconfdir
+that was specified when compiling the program (default is
+@file{/usr/local/etc/} on most systems).
+
+If no configuration file can be found, @sc{jwhois} will default all queries
+to @url{whois.internic.net}.
+
+An example configuration file that includes most known Whois servers can be
+found in the @code{example} subdirectory of the official distribution.
+This example configuration also contains a lot of well used options
+that should be suitable for most setups.
+
+The configuration file is split into a number of blocks. Each block
+can contain a number of different options which are explained in the
+sections below. You can also get an overview of the syntax by looking
+at the example configuration file included in the distribution.
+
+@menu
+* Global options::              Global configuration options
+* Whois servers::               Syntax for selecting whois servers
+* Server options::              Syntax for server options
+@end menu
+
+@node Global options, Whois servers, Site Configuration, Top
+@chapter Global options
+
+The global options of @sc{jwhois} configure some basic facilities
+that are to be used for all hosts and queries made.
+
+@table @option
+@item cachefile
+By default, the location of the cache file is
+@file{/usr/local/var/jwhois.db}, but this can be changed
+at compile time. The option @option{cachefile} also
+changes the location.
+
+Note that the cache feature might have been disabled at compile time and
+thus not be available on this system.
+
+@item cacheexpire
+The default expire time for all cached objects it
+7 days (168 hours). this can be changed with the
+@option{cacheexpire} option. The value is the number
+of hours that objects is considered to be current.
+
+@item whois-servers-domain
+Whois-servers.net is a service offered by the
+CenterGate Research Group. They register CNAMEs in
+the @url{whois-servers.net} domain for every known
+top-level domain, pointing to the appropriate whois
+server.
+
+When querying for @samp{wildebeest.se} for example,
+@sc{jwhois} would look for an address @url{se.whois-servers.net}
+and query the appropriate server based on that information.
+
+If you wish to make whois-servers.net-style queries
+using another domain name than @url{whois-servers.net}, you
+can change this option to the domain name you want.
+
+@item browser-pathname
+@item browser-stdarg
+@item browser-postarg
+@item post-as-file
+These options control the HTTP support on @sc{jwhois}.
+@option{browser-pathname} should be set to the path
+and executable of the browser you wish to use to download
+information from HTTP-gateways. This is normally a
+program such as @sc{lynx} or @sc{curl}.
+
+@option{browser-stdarg} sets the arguments to pass to
+the browser in order to have the browser direct its
+options to the standard output. @sc{jwhois} catches
+this information and displays it to the user.
+
+@option{browser-postarg} sets the arguments used to
+enable a processing of POST requests.
+
+@option{post-as-file} selects the way POST data is sent to
+the browser. If set to @sc{true}, @sc{lynx}-style processing
+is enabled, which means that the program,
+when passed the option specified in @option{browser-postarg},
+should accept one variable per line of input on standard input,
+terminated with three dashes.
+If set to @sc{false}, @sc{w3m}-style processing is enabled,
+which means that the program, when passed this option,
+should consider the parameter that follows the one specified
+in @option{browser-postarg} as a file name from which to read
+POST data.
+
+@option{connect-timeout} enables a timeout on connects to remote
+hosts. It should be set to a positive integer value. When the specified
+number of seconds have elapsed and the remote host hasn't answered, the
+connection will be aborted. If this option is not set, the default timeout
+is 75 seconds.
+
+@end table
+
+Examples:
+
+@example
+cachefile = "/var/lib/jwhois.db";
+cacheexpire = 168;
+browser-pathname = "/usr/bin/lynx";
+browser-stdarg = "-dump";
+browser-postarg = "-post_data";
+connect-timeout = 3;
+@end example
+
+@node Whois servers, Server options, Global options, Top
+@chapter Whois servers
+
+When making a query, @sc{jwhois} looks at the @option{whois-servers}
+block to determine which host to send the query to. This block
+consists of a number of rules. Each rule is evaluated in turn,
+starting with the first one in @option{whois-servers}.
+A rule consists of a key and a value. The key can be either
+a special option, or a CIDR block or regular expression that
+is matched against the query that the user specified.
+
+The special option @option{type} takes one value:
+@option{cidr}, @option{cidr6} or @option{regex}. This defines the current
+blocks matching. Each block can match either with CIDR
+blocks (IPv4 or IPv6) or regular expressions, never both.
+
+If the key is a regular expression, the value can take on
+of two forms. Either a single string containing the hostname
+of the appropriate whois-server, optionally postfixed with
+a colon and a port number, or a block.
+
+If the value of the regular expression is a block, it can
+contain any number of options. The options @option{whois-server}
+and @option{query-format} are supported today.
+
+@option{whois-server} specifies the hostname of the whois server
+to send a query to, optionally postfixed with a colon and a
+port number, just as if the value had been a single string
+containing the whois server hostname.
+
+@option{query-format} rewrites queries matching this rule
+according to the contents of the options value. The special
+characters @samp{$*} are replaced with the original query.
+If a @option{query-format} is specified both on an individual
+rule and on a server option, the most @option{query-format}
+for the individual rule will be used since it is most specific.
+
+The special keyword @samp{default} can be used to mark an entry
+as valid for all keys. The most specific rule will be used when
+searching for a host to query.
+
+Examples:
+
+@example
+whois-servers @{
+        type = regex;
+
+	"\\([0-9]+\\.\\)+[0-9]+" = "struct cidr-blocks";
+        ".*-[A-Z]+$" = "struct handles";
+
+        default = "whois.internic.net";
+@};
+handles @{
+        type = regex;
+
+        ".*-RIPE$" = "whois.ripe.net";
+@};
+
+cidr @{
+        type = cidr;
+
+        "61.0.0.0/8" @{
+                whois-server = "whois.apnic.net";
+                query-format = "$* /e";
+        @}
+        default = "whois.arin.net";
+@};
+
+@end example
+
+@node Server options, RIPE Extensions, Whois servers, Top
+@chapter Server options
+
+The @option{server-options} block defines a number of parameters
+that are specific to each host.
+
+@table @option
+@item whois-redirect
+This option, previously located in a separate content-redirect
+block of the configuration file, matches output from standard
+whois servers and redirects the query to another host based on
+the output.
+
+The most commonly used option here is to redirect the query from
+the Internic shared whois server to the whois server of each
+individual registrar.
+
+The value of the key @option{whois-redirect} should contain a
+regular expression which matches one or two string. If it matches
+one string, it will be treated as the hostname of a server to ask
+for more information. If it matches two strings, the first string
+will be treated as the hostname and the second as the port number.
+
+The matching follows standard regular expressions and grouping
+of regular expressions into one string is done by enclosing the
+group in parentheses.
+
+@item query-format
+By specifying a @option{query-format}, the query can be rewritten
+before being sent to the target whois server. This is useful
+for example if the server defaults to output its information in
+another language than English, and you wish to always rewrite
+queries sent to it according to some syntax that enables output
+in English.
+
+The value of this option is a simple string where the special
+characters @samp{$*} will be replaced with the original query.
+If a @option{query-format} is specified both on an individual
+rule and on a server option, the @option{query-format}
+for the individual rule will be used since it is most specific.
+
+For more advanced query rewrites, it is also possible to access
+subfields of the domain query. These subfields are counted from
+the left or the right, starting at 1 (one). To select the fields,
+the syntax @samp{$@{start-end@}} (left to right) or @samp{$@{start+end@}}
+(right to left). Either of the start or end fields can be omitted,
+and the two formats cannot be combined in one query. You can also
+select a single field (counting from the left) by using the format
+@samp{$@{fieldnumber@}}. To do this when counting from the right, you
+need to write @samp{$@{fieldnumber+fieldnumber@}}. Please note that
+the first field number is always the leftmost field, so the
+numerical values are swapped when counting right to left.
+
+To include a verbatim @samp{$} in the query, write @samp{$$}.
+
+You can use @option{query-format} also for HTTP based queries, but
+it cannot be combined with @option{http-action},
+@option{form-element} or @option{form-extra}.
+
+@item answer-charset
+Specifies a character set which the server uses to return data.
+You can list possible character set names by running @samp{iconv -l}.
+If character set conversion is not supported or not possible,
+the answer is printed without conversion.
+
+@item http
+The @option{http} option specifies that this server supports
+queries made via HTTP. The value should be set to @samp{true}
+if this is the case. The options @option{http-method},
+@option{http-action} and @option{form-element} must also
+be set for this to work.
+
+@item http-method
+When asking servers for information through HTTP, this
+option specifies the HTTP method to use. It can be either
+@samp{GET} or @samp{POST}. Many servers support either
+method, so selecting one is a matter of personal preference.
+
+@item http-action
+This option specifies the action of the HTTP query sent
+to a remote host. Most often, this is simply the pathname
+of the URL.
+
+@item form-element
+The @option{form-element} is the name of the HTML form element
+which should contain the query. Usually this is something
+simple, like @samp{domain}, but you need to verify this by
+looking at each servers HTML documents before setting this
+option to its correct value.
+
+@item form-extra
+Lists any extra form elements that are to be submitted with
+the query.
+
+@item rwhois
+Set this option to @samp{true} if the server supports the
+rwhois protocol, this option makes @sc{jwhois} send all
+queries to the server as rwhois queries.
+
+@item rwhois-display
+If the server supports rwhois and you wish to select another
+display than the default dump format, you can set this option
+to the display you wish to use.
+
+@item rwhois-limit
+If the server supports rwhois and you wish to limit the
+amount of responses to a query, you can set this option
+to the number of responses you would like to receive at
+maximum.
+
+@end table
+
+Examples:
+@example
+server-options @{
+	"rwhois\\.nic\\.ve" @{
+		rwhois = true;
+		rwhois-display = "dump";
+		rwhois-limit = 10;
+	@}
+	"whois\\.crsnic\\.net" @{
+		whois-redirect = ".*Whois Server: \\(.*\\)";
+	@}
+	"whois\\.ncst\\.ernet\\.in" @{
+		query-format = "domain $*";
+	@}
+	"www\\.nic-se\\.se" @{
+		http = true;
+		http-method = "GET";
+		http-action = "/cgi-bin/whois/www-to-whois";
+		form-element = "domain";
+	@}
+@}
+@end example
+
+@node RIPE Extensions, Reporting bugs, Server options, Top
+@chapter RIPE Extensions
+
+RIPE (Réseaux IP Européens) has defined a number of options that can be
+used against a RIPE-compatible whois server (ripe.net, apnic.net and
+others).  Unfortunately, there is really no way of telling whether a
+host we are connecting to is RIPE-compatible or not.  RIPE extensions
+are therefore not directly incorporated into the @sc{jwhois} client.
+A list of the options can be found in RIPE Document 157 which you can get
+from the RIPE ftp server, @url{ftp://ftp.ripe.net/ripe/docs/}.
+
+It is possible to use these options together with @sc{jwhois} by changing
+the format of the query slightly. If you were to search for all entries in
+the RIPE database which lists the admin-c, tech-c or zone-c as CO19-RIPE,
+you could use the following command syntax:
+
+@example
+$ jwhois -h whois.ripe.net -- -i admin-c,tech-c,zone-c CO19-RIPE
+@end example
+
+@samp{--} is used to separate the RIPE options from the jwhois options.
+
+@node Reporting bugs,  , RIPE Extensions, Top
+@chapter Reporting bugs
+
+Email bug reports to @code{bug-jwhois@@gnu.org}.
+
+@contents
+@bye

@@ -30,3 +30,18 @@ jq: clean make-afl
 jqvuln: clean make-afl
 	cd src/jq-jq-1.5-vuln && CC=$(CC) ./configure && make
 	cd src/jq-jq-1.5-vuln && /.$(AFL) -i /fuzz/jqvuln/in -o /fuzz/jqvuln/out -- /src/jq-jq-1.5-vuln/jq '.'
+
+  
+pngquant: clean make-afl
+	cd src/pngquant && CC=$(CC) ./configure && make
+	cd src/pngquant && /.$(AFL) -i /fuzz/pngquant/in -o /fuzz/pngquant/out -- /src/pngquant/pngquant --quality=65-80 99
+
+bc: clean make-afl
+	apt-get install -y texinfo
+	cd src/bc-1.07 && CC=$(CC) ./configure && make
+	cd src/bc-1.07 && /.$(AFL) -i /fuzz/bc/in -o /fuzz/bc/out -- /src/bc-1.07/bc/bc -l
+
+R: clean make-afl
+	apt-get install -y gfortran libreadline6-dev bzip2 libbz2-dev liblzma-dev libpcre3-dev libcurl4-openssl-dev
+	cd src/R-3.4.0 && CC=$(CC) ./configure --with-x=no && make
+	/bin/bash #cd src/R-3.4.0 && /.$(AFL) -i /fuzz/bc/in -o /fuzz/bc/out -- /src/R-3.4.0/R

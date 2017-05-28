@@ -1,0 +1,3 @@
+-.0^-0^vpt(-.0^44)
+sqrt(-.0YYYYYYYYYYYY^4)
+sqrt(-.0YYYYYYYYYYYY^444)

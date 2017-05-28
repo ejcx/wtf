@@ -1,0 +1,363 @@
+# Mesajele în limba românã pentru pachetul jwhois.
+# Copyright (C) 2003 Free Software Foundation, Inc.
+# Eugen Hoanca <eugenh@urban-grafx.ro>, 2003.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: jwhois 3.2.2\n"
+"Report-Msgid-Bugs-To: bug-jwhois@gnu.org\n"
+"POT-Creation-Date: 2007-02-14 14:08+0530\n"
+"PO-Revision-Date: 2003-07-21 16:55+0300\n"
+"Last-Translator: Eugen Hoanca <eugenh@urban-grafx.ro>\n"
+"Language-Team: Romanian <translation-team-ro@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/cache.c:142
+msgid "Invalid expire time"
+msgstr "Timp de expirare invalid"
+
+#: src/cache.c:155 src/init.c:270 src/init.c:279
+msgid "Unable to open"
+msgstr "Nu s-a putut deschide"
+
+#: src/cache.c:164
+msgid "Unable to store data in cache\n"
+msgstr "Nu s-au putut stoca datele în cache\n"
+
+#: src/dns.c:93
+msgid "host not found"
+msgstr "nu s-a gãsit host-ul"
+
+#: src/gai_strerror.c:61
+msgid "Address family for hostname not supported"
+msgstr "Familie de adrese sau hostname nesuportate"
+
+#: src/gai_strerror.c:63
+msgid "Temporary failure in name resolution"
+msgstr "Eroare temporarã în rezoluþia numelui"
+
+#: src/gai_strerror.c:65
+msgid "Bad value for ai_flags"
+msgstr "Valoare greºitã pentru ai_flags"
+
+#: src/gai_strerror.c:67
+msgid "Non-recoverable failure in name resolution"
+msgstr "Eroare ireversibilã în rezoluþia numelui"
+
+#: src/gai_strerror.c:69
+msgid "ai_family not supported"
+msgstr "ai_family nesuportatã"
+
+#: src/gai_strerror.c:71
+msgid "Memory allocation failure"
+msgstr "Eroare în alocarea memoriei"
+
+#: src/gai_strerror.c:73
+msgid "No address associated with hostname"
+msgstr "Nici o adresã asociatã cu hostname"
+
+#: src/gai_strerror.c:75
+msgid "Name or service not known"
+msgstr "Nume sau serviciu necunoscute"
+
+#: src/gai_strerror.c:77
+msgid "Servname not supported for ai_socktype"
+msgstr "Servname nesuportat poentru ai_socktype"
+
+#: src/gai_strerror.c:79
+msgid "ai_socktype not supported"
+msgstr "ai_socktype nesuportat"
+
+#: src/gai_strerror.c:81
+msgid "System error"
+msgstr "Eroare de sistem"
+
+#: src/gai_strerror.c:83
+msgid "Unknown error"
+msgstr "Eroare necunoscutã"
+
+#: src/getopt.c:678
+#, c-format
+msgid "%s: option `%s' is ambiguous\n"
+msgstr "%s: opþiunea `%s' este ambiguã\n"
+
+#: src/getopt.c:703
+#, c-format
+msgid "%s: option `--%s' doesn't allow an argument\n"
+msgstr "%s: opþiunea `--%s' nu permite parametri\n"
+
+#: src/getopt.c:708
+#, c-format
+msgid "%s: option `%c%s' doesn't allow an argument\n"
+msgstr "%s: opþiunea `%c%s' nu permite parametri\n"
+
+#: src/getopt.c:726 src/getopt.c:899
+#, c-format
+msgid "%s: option `%s' requires an argument\n"
+msgstr "%s: opþiunea `%s' necesitã parametri\n"
+
+#: src/getopt.c:755
+#, c-format
+msgid "%s: unrecognized option `--%s'\n"
+msgstr "%s: opþiune necunoscutã `--%s'\n"
+
+#: src/getopt.c:759
+#, c-format
+msgid "%s: unrecognized option `%c%s'\n"
+msgstr "%s: opþiune necunoscutã `%c%s'\n"
+
+#: src/getopt.c:785
+#, c-format
+msgid "%s: illegal option -- %c\n"
+msgstr "%s: opþiune ilegalã -- %c\n"
+
+#: src/getopt.c:788
+#, c-format
+msgid "%s: invalid option -- %c\n"
+msgstr "%s: opþiune invalidã -- %c\n"
+
+#: src/getopt.c:818 src/getopt.c:948
+#, c-format
+msgid "%s: option requires an argument -- %c\n"
+msgstr "%s: opþiunea necesitã un parametru -- %c\n"
+
+#: src/getopt.c:865
+#, c-format
+msgid "%s: option `-W %s' is ambiguous\n"
+msgstr "%s: opþiunea `-W %s' este ambiguã\n"
+
+#: src/getopt.c:883
+#, c-format
+msgid "%s: option `-W %s' doesn't allow an argument\n"
+msgstr "%s: opþiunea `-W %s' nu permite parametri\n"
+
+#: src/http.c:72
+msgid "HTTP configuration is incomplete:"
+msgstr "Configuraþia HTTP este incmpletã"
+
+#: src/http.c:73 src/http.c:74 src/http.c:75 src/http.c:93 src/http.c:102
+#: src/http.c:167
+msgid "Option is missing:"
+msgstr "Opþiunea lipseºte:"
+
+#: src/http.c:85
+msgid "Option http-method must be \"GET\" or \"POST\".\n"
+msgstr "Opþiunea http-method trebuie sã fie \"GET\" sau \"POST\".\n"
+
+#: src/http.c:196
+msgid "Unable to create temporary file"
+msgstr "Nu s-a putut crea fiºierul temporar"
+
+#: src/http.c:247 src/lookup.c:452 src/rwhois.c:130 src/whois.c:62
+msgid "Querying"
+msgstr "Interogare"
+
+#: src/http.c:277
+msgid "Unable to run web browser"
+msgstr "Nu s-a putut rula browserul de web"
+
+#: src/init.c:119
+#, c-format
+msgid "Copyright (C) 1999-%d  Free Software Foundation, Inc.\n"
+msgstr "Copyright (C) 1999-%d  Free Software Foundation, Inc.\n"
+
+#: src/init.c:120
+msgid ""
+"This program is free software with ABSOLUTELY NO WARRANTY; you may\n"
+"redistribute it under the terms of the GNU General Public License."
+msgstr ""
+"Acest program este free software fãrã ABSOLUT NICI O GARANÞIE; puteþi sã-l\n"
+"redistribuiþi sub termenii Licenþei Publice Generale GNU."
+
+#: src/init.c:123
+msgid "version"
+msgstr "versiunea"
+
+#: src/init.c:128
+msgid "Usage: jwhois [OPTIONS] [QUERY]"
+msgstr "Folosire: jwhois [OPÞIUNI] [INTEROGARE]"
+
+#: src/init.c:130
+#, c-format
+msgid ""
+"  --version                  display version number and patch level\n"
+"  --help                     display this help\n"
+"  -v, --verbose              verbose debug output\n"
+"  -c FILE, --config=FILE     use FILE as configuration file\n"
+"  -h HOST, --host=HOST       explicitly query HOST\n"
+"  -n, --no-redirect          disable content redirection\n"
+"  -s, --no-whoisservers      disable whois-servers.net service support\n"
+"  -a, --raw                  disable reformatting of the query\n"
+"  -i, --display-redirections display all redirects instead of hiding them\n"
+"  -p PORT, --port=PORT       use port number PORT (in conjunction with "
+"HOST)\n"
+"  -r, --rwhois               force an rwhois query to be made\n"
+"  --rwhois-display=DISPLAY   sets the display option in rwhois queries\n"
+"  --rwhois-limit=LIMIT       sets the maximum number of matches to return\n"
+msgstr ""
+"  --version                  afiºeazã numãrul versiunii ºi nivelul de "
+"patchl\n"
+"  --help                     afiºeazã acest ajutor\n"
+"  -v, --verbose              output detaliat cu debug\n"
+"  -c FILE, --config=FIªIER     foloseºte FIªIER ca fiºier de configurare\n"
+"  -h HOST, --host=HOST       interogheazã HOST în mod explicit\n"
+"  -n, --no-redirect          dezactiveazã redirectarea de conþinut\n"
+"  -s, --no-whoisservers      dezactiveazã serviciul whois-servers.net\n"
+"  -a, --raw                  dezactiveazã reformatarea interogãrii\n"
+"  -i, --display-redirections afiºeazã toate redirectãrile în loc sã le "
+"ascundã\n"
+"  -p PORT, --port=PORT       foloseºte numãrul de port PORT (în folosire cu "
+"HOST)\n"
+"  -r, --rwhois               forþeazã efectuarea unei interogãri rwhois\n"
+"  --rwhois-display=AFIªARE   seteazã opþiuni de afiºare în interogare "
+"rwhois\n"
+"  --rwhois-limit=LIMITÃ       seteazã numãrul maxim de potriviri de "
+"raportat\n"
+
+#: src/init.c:145
+#, c-format
+msgid ""
+"  -f, --force-lookup         force lookup even if the entry is cached\n"
+"  -d, --disable-cache        disable cache functions\n"
+msgstr ""
+"  -f, --force-lookup         forþeazã lookup chiar dacã intrarea e în cache\n"
+"  -d, --disable-cache        dezactiveazã funcþiile de caching\n"
+
+#: src/init.c:148
+msgid "Report bugs to bug-jwhois@gnu.org"
+msgstr "Raportaþi bug-uri la bug-jwhois@gnu.org"
+
+#: src/init.c:233
+msgid "Invalid limit"
+msgstr "Limitã invalidã"
+
+#: src/init.c:247
+msgid "Invalid port number"
+msgstr "Numãr port invalid"
+
+#: src/jconfig.c:245 src/jconfig.c:265 src/jconfig.c:317 src/jconfig.c:373
+#: src/jwhois.c:110 src/jwhois.c:159 src/lookup.c:631 src/lookup.c:734
+#: src/utils.c:101 src/utils.c:111 src/whois.c:76
+msgid "Error allocating memory"
+msgstr "Eroare în alocarea memoriei"
+
+#: src/jconfig.c:273 src/jconfig.c:325
+msgid "String out of bounds on line"
+msgstr "ªiruri în afara limitelor (out of bounds) în linia"
+
+#: src/jconfig.c:299
+msgid "End of file looking for '\"' on line"
+msgstr "Sfârºit de fiºier cãutând '\"' în linia"
+
+#: src/jconfig.c:354
+msgid "Unexpected end of file on line"
+msgstr "Sfârºit de fiºier neaºteptat în linia"
+
+#: src/jconfig.c:423
+msgid "Multiple keys on line"
+msgstr "Chei(keys) multiple în linia"
+
+#: src/jconfig.c:433
+msgid "Missing key on line"
+msgstr "Cheie(key) lipsã în linia"
+
+#: src/jwhois.c:148
+msgid "Fatal error searching for host to query"
+msgstr "Eroare fatalã în cãutarea host-ului de interogat"
+
+#: src/jwhois.c:170
+msgid "Error reading cache"
+msgstr "Eroare în citirea cache-ului"
+
+#: src/jwhois.c:175
+msgid "Cached"
+msgstr "În cache(cached)"
+
+#: src/jwhois.c:189
+msgid "Error writing to cache"
+msgstr "Eroare în scrierea în cache"
+
+#: src/lookup.c:110
+msgid "Invalid netmask on line"
+msgstr "Netmask invalid în linia"
+
+#: src/lookup.c:214
+#, c-format
+msgid "[%s: Missing prefix length on line %d]\n"
+msgstr ""
+
+#: src/lookup.c:220
+#, c-format
+msgid "[%s: Invalid prefix length on line %d]\n"
+msgstr ""
+
+#: src/lookup.c:232
+#, fuzzy, c-format
+msgid "[%s: Invalid network address on line %d]\n"
+msgstr "Netmask invalid în linia"
+
+#: src/lookup.c:437
+msgid "Warning: Configuration file contains references to IPv6,"
+msgstr ""
+
+#: src/lookup.c:438
+msgid "         but jwhois was compiled without IPv6 support."
+msgstr ""
+
+#: src/lookup.c:552 src/lookup.c:556
+msgid "Redirected to"
+msgstr "Redirectat spre"
+
+#: src/rwhois.c:138 src/whois.c:70
+#, c-format
+msgid "[Unable to connect to remote host]\n"
+msgstr "[Nu m-am putut conecta la host-ul remote]\n"
+
+#: src/rwhois.c:159
+#, c-format
+msgid "[RWHOIS: Protocol error while sending -rwhois option]\n"
+msgstr "[RWHOIS: Eroare de protocol în trimiterea opþiunilor rwhois]\n"
+
+#: src/rwhois.c:197
+msgid "Server does not support display command"
+msgstr "Serverul nu permite comandã de afiºare"
+
+#: src/rwhois.c:212
+msgid "Invalid limit in configuration file"
+msgstr "Limitã invalidã în fiºierul de configurare"
+
+#: src/rwhois.c:236
+msgid "Server does not support limit"
+msgstr "Serverul nu permite limitã"
+
+#: src/rwhois.c:278
+msgid "Unknown referral"
+msgstr "Referral necunoscut"
+
+#: src/rwhois.c:370
+msgid "Following referral to"
+msgstr "Se urmeazã referral cãtre"
+
+#: src/rwhois.c:399
+#, c-format
+msgid "[Host terminated connection prematurely]\n"
+msgstr "[Host-ul a închis prematur conexiunea]\n"
+
+#: src/rwhois.c:475
+msgid "Unhandled reply"
+msgstr "Rãspuns nemanevrabil"
+
+#: src/utils.c:262
+msgid "Error creating socket"
+msgstr "Eroare în crearea de socket"
+
+#: src/utils.c:348
+#, fuzzy
+msgid "Invalid connect timeout value"
+msgstr "Netmask invalid în linia"
+
+#: src/whois.c:88
+msgid "Error reading data from"
+msgstr "Eroare în citirea datelor din"

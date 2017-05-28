@@ -4,7 +4,7 @@ MAINTAINER Evan Johnson <evan@twiinsen.com>
 ARG fuzztgt
 ENV fuzztgt=$fuzztgt
 
-RUN apt-get update && apt-get install -y git gcc curl make build-essential
+RUN apt-get update && apt-get install -y git gcc curl make build-essential libpng-dev
 RUN curl https://storage.googleapis.com/golang/go1.8.1.linux-amd64.tar.gz > go1.8.1.linux-amd64.tar.gz
 RUN tar -zxvf go1.8.1.linux-amd64.tar.gz -C /usr/local
 

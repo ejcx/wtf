@@ -206,14 +206,12 @@ int main(int argc, char* argv[]) {
         jq_util_input_add_input(input_state, argv[i]);
         nfiles++;
       } else {
-        // Read the first line of stdin
+        // Read the first line of stdin and let the
+        // program continue reading from stdin later.
         size_t s;
         if (getline(&program, &s, stdin) == -1) {
-          printf("We straight up died %s %d", program, s);
-          fflush(stdout);
           die();
         }
-        printf("%s", program);
         //program = argv[i];
       }
     } else {

@@ -1,0 +1,358 @@
+# Translation of `jwhois' messages to Chinese (traditional).
+# Copyright (C) 2002 Free Software Foundation, Inc.
+# Yuan-Chen Cheng <ycheng@sinica.edu.tw>, 2002.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: jwhois 3.1.0\n"
+"Report-Msgid-Bugs-To: bug-jwhois@gnu.org\n"
+"POT-Creation-Date: 2007-02-14 14:08+0530\n"
+"PO-Revision-Date: 2002-1-12 19:19+8\n"
+"Last-Translator: Yuan0-Chen Cheng <ycheng@sinica.edu.tw>\n"
+"Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=Big5\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/cache.c:142
+msgid "Invalid expire time"
+msgstr "無效的到期時間"
+
+#: src/cache.c:155 src/init.c:270 src/init.c:279
+msgid "Unable to open"
+msgstr "無法打開的"
+
+#: src/cache.c:164
+msgid "Unable to store data in cache\n"
+msgstr "無法將資料存近快取\n"
+
+#: src/dns.c:93
+msgid "host not found"
+msgstr "主機找不到"
+
+#: src/gai_strerror.c:61
+msgid "Address family for hostname not supported"
+msgstr "主機名稱的位址類別不支援"
+
+#: src/gai_strerror.c:63
+msgid "Temporary failure in name resolution"
+msgstr "在名稱解析上暫時失敗"
+
+#: src/gai_strerror.c:65
+msgid "Bad value for ai_flags"
+msgstr "ai_flags 的值錯誤"
+
+#: src/gai_strerror.c:67
+msgid "Non-recoverable failure in name resolution"
+msgstr "在名稱查詢上發生了不可回復的錯誤"
+
+#: src/gai_strerror.c:69
+msgid "ai_family not supported"
+msgstr "不支援 ai_family"
+
+#: src/gai_strerror.c:71
+msgid "Memory allocation failure"
+msgstr "記憶體分配失敗"
+
+#: src/gai_strerror.c:73
+msgid "No address associated with hostname"
+msgstr "沒有位址與該主機名稱有關"
+
+#: src/gai_strerror.c:75
+msgid "Name or service not known"
+msgstr "名稱或服務不詳的"
+
+#: src/gai_strerror.c:77
+msgid "Servname not supported for ai_socktype"
+msgstr "ai_socktype 的 Servname 不支援"
+
+#: src/gai_strerror.c:79
+msgid "ai_socktype not supported"
+msgstr "ai_socktype 不支援"
+
+#: src/gai_strerror.c:81
+msgid "System error"
+msgstr "系統錯誤"
+
+#: src/gai_strerror.c:83
+msgid "Unknown error"
+msgstr "未知的錯誤"
+
+#: src/getopt.c:678
+#, c-format
+msgid "%s: option `%s' is ambiguous\n"
+msgstr "%s：選項 `%s' 是不明確的\n"
+
+#: src/getopt.c:703
+#, c-format
+msgid "%s: option `--%s' doesn't allow an argument\n"
+msgstr "%s：選擇 `--%s' 不允許一個參數\n"
+
+#: src/getopt.c:708
+#, c-format
+msgid "%s: option `%c%s' doesn't allow an argument\n"
+msgstr "%s：選項 `%c%s' 不允許一個參數\n"
+
+#: src/getopt.c:726 src/getopt.c:899
+#, c-format
+msgid "%s: option `%s' requires an argument\n"
+msgstr "%s：選項 `%s' 需要一個參數\n"
+
+#: src/getopt.c:755
+#, c-format
+msgid "%s: unrecognized option `--%s'\n"
+msgstr "%s：無法辨認的選項 `--%s'\n"
+
+#: src/getopt.c:759
+#, c-format
+msgid "%s: unrecognized option `%c%s'\n"
+msgstr "%s：無法辨認選項 `%c%s'\n"
+
+#: src/getopt.c:785
+#, c-format
+msgid "%s: illegal option -- %c\n"
+msgstr "%s：非法的選項 -- %c\n"
+
+#: src/getopt.c:788
+#, c-format
+msgid "%s: invalid option -- %c\n"
+msgstr "%s：無效的選擇 -- %c\n"
+
+#: src/getopt.c:818 src/getopt.c:948
+#, c-format
+msgid "%s: option requires an argument -- %c\n"
+msgstr "%s：選項需要一個引數 -- %c\n"
+
+#: src/getopt.c:865
+#, c-format
+msgid "%s: option `-W %s' is ambiguous\n"
+msgstr "%s：選項 `-W %s' 不明確\n"
+
+#: src/getopt.c:883
+#, c-format
+msgid "%s: option `-W %s' doesn't allow an argument\n"
+msgstr "%s：選項 'W %s' 不允許一個引數\n"
+
+#: src/http.c:72
+msgid "HTTP configuration is incomplete:"
+msgstr "HTTP 組態是不完整的："
+
+#: src/http.c:73 src/http.c:74 src/http.c:75 src/http.c:93 src/http.c:102
+#: src/http.c:167
+msgid "Option is missing:"
+msgstr "選擇遺漏："
+
+#: src/http.c:85
+msgid "Option http-method must be \"GET\" or \"POST\".\n"
+msgstr "選項 http-method 方法必須是\"GET\" 或是 \"POST\"。\n"
+
+#: src/http.c:196
+msgid "Unable to create temporary file"
+msgstr ""
+
+#: src/http.c:247 src/lookup.c:452 src/rwhois.c:130 src/whois.c:62
+msgid "Querying"
+msgstr "查詢"
+
+#: src/http.c:277
+msgid "Unable to run web browser"
+msgstr "無法執行瀏覽器"
+
+#: src/init.c:119
+#, c-format
+msgid "Copyright (C) 1999-%d  Free Software Foundation, Inc.\n"
+msgstr "版權所有 (C) 1999-%d 自由軟體基金會。\n"
+
+#: src/init.c:120
+msgid ""
+"This program is free software with ABSOLUTELY NO WARRANTY; you may\n"
+"redistribute it under the terms of the GNU General Public License."
+msgstr ""
+"這個程式是一個完全沒有擔保的自由軟體；你可以\n"
+"在 GPL 版權聲明下任意的再散佈。"
+
+#: src/init.c:123
+msgid "version"
+msgstr "版本"
+
+#: src/init.c:128
+msgid "Usage: jwhois [OPTIONS] [QUERY]"
+msgstr "使用： jwhois [選項][查詢]"
+
+#: src/init.c:130
+#, c-format
+msgid ""
+"  --version                  display version number and patch level\n"
+"  --help                     display this help\n"
+"  -v, --verbose              verbose debug output\n"
+"  -c FILE, --config=FILE     use FILE as configuration file\n"
+"  -h HOST, --host=HOST       explicitly query HOST\n"
+"  -n, --no-redirect          disable content redirection\n"
+"  -s, --no-whoisservers      disable whois-servers.net service support\n"
+"  -a, --raw                  disable reformatting of the query\n"
+"  -i, --display-redirections display all redirects instead of hiding them\n"
+"  -p PORT, --port=PORT       use port number PORT (in conjunction with "
+"HOST)\n"
+"  -r, --rwhois               force an rwhois query to be made\n"
+"  --rwhois-display=DISPLAY   sets the display option in rwhois queries\n"
+"  --rwhois-limit=LIMIT       sets the maximum number of matches to return\n"
+msgstr ""
+"  --版本                     顯示本版本與修補編號\n"
+"  --求助                     顯示本求助頁\n"
+"  -v, --verbose              繁複的除錯輸出\n"
+"  -c FILE, --config=FILE     以檔案 FILE 作為設定檔\n"
+"  -h HOST, --host=HOST       明白指定查詢主機 HOST\n"
+"  -n, --no-redirect          停止內容重新導向\n"
+"  -s, --no-whoisservers      停止使用 whois-servers.net 服務支援\n"
+"  -a, --raw                  停止對於查詢格式重整\n"
+"  -i, --display-redirections 顯示所有的查詢重導，而非隱藏他們\n"
+"  -p PORT, --port=PORT       使用埠號 PORT (在其對應的主機 HOST)\n"
+"  -r, --rwhois               強迫使用 rwhois 查詢\n"
+"  --rwhois-display=DISPLAY   在 rwhois 查詢中設定 DISPLAY 選項\n"
+"  --rwhois-limit=LIMIT       設定找到個數上限\n"
+
+#: src/init.c:145
+#, c-format
+msgid ""
+"  -f, --force-lookup         force lookup even if the entry is cached\n"
+"  -d, --disable-cache        disable cache functions\n"
+msgstr ""
+"  -f, --force-lookup         即便該資料被快取了，也強迫查詢\n"
+"  -d, --disable-cache        關掉快取功能\n"
+
+#: src/init.c:148
+msgid "Report bugs to bug-jwhois@gnu.org"
+msgstr "回報錯誤點給 bug-jwhois@gnu.org"
+
+#: src/init.c:233
+msgid "Invalid limit"
+msgstr "無效的界線"
+
+#: src/init.c:247
+msgid "Invalid port number"
+msgstr "無效的埠數"
+
+#: src/jconfig.c:245 src/jconfig.c:265 src/jconfig.c:317 src/jconfig.c:373
+#: src/jwhois.c:110 src/jwhois.c:159 src/lookup.c:631 src/lookup.c:734
+#: src/utils.c:101 src/utils.c:111 src/whois.c:76
+msgid "Error allocating memory"
+msgstr "分派記憶體錯誤"
+
+#: src/jconfig.c:273 src/jconfig.c:325
+msgid "String out of bounds on line"
+msgstr "字串超出界線在行數"
+
+#: src/jconfig.c:299
+msgid "End of file looking for '\"' on line"
+msgstr "找尋 '\"' 遇到檔案結束在行數"
+
+#: src/jconfig.c:354
+msgid "Unexpected end of file on line"
+msgstr "意外的檔案終點，在行數"
+
+#: src/jconfig.c:423
+msgid "Multiple keys on line"
+msgstr "多個鍵值在行數"
+
+#: src/jconfig.c:433
+msgid "Missing key on line"
+msgstr "沒有鍵值在行數"
+
+#: src/jwhois.c:148
+msgid "Fatal error searching for host to query"
+msgstr "在找尋主機來查詢時遇到了嚴重的錯誤"
+
+#: src/jwhois.c:170
+msgid "Error reading cache"
+msgstr "讀取快取錯誤"
+
+#: src/jwhois.c:175
+msgid "Cached"
+msgstr "快取到了"
+
+#: src/jwhois.c:189
+msgid "Error writing to cache"
+msgstr "錯誤寫入快取"
+
+#: src/lookup.c:110
+msgid "Invalid netmask on line"
+msgstr "無效的 netmask"
+
+#: src/lookup.c:214
+#, c-format
+msgid "[%s: Missing prefix length on line %d]\n"
+msgstr ""
+
+#: src/lookup.c:220
+#, c-format
+msgid "[%s: Invalid prefix length on line %d]\n"
+msgstr ""
+
+#: src/lookup.c:232
+#, fuzzy, c-format
+msgid "[%s: Invalid network address on line %d]\n"
+msgstr "無效的 netmask"
+
+#: src/lookup.c:437
+msgid "Warning: Configuration file contains references to IPv6,"
+msgstr ""
+
+#: src/lookup.c:438
+msgid "         but jwhois was compiled without IPv6 support."
+msgstr ""
+
+#: src/lookup.c:552 src/lookup.c:556
+msgid "Redirected to"
+msgstr "改方向到"
+
+#: src/rwhois.c:138 src/whois.c:70
+#, c-format
+msgid "[Unable to connect to remote host]\n"
+msgstr "[無法連線到遠端主機]\n"
+
+#: src/rwhois.c:159
+#, c-format
+msgid "[RWHOIS: Protocol error while sending -rwhois option]\n"
+msgstr "[RWHOIS ：送 -rwhois 選項的通訊協定時錯誤]\n"
+
+#: src/rwhois.c:197
+msgid "Server does not support display command"
+msgstr "伺服器不支援展示指令"
+
+#: src/rwhois.c:212
+msgid "Invalid limit in configuration file"
+msgstr "組態檔包含無效的限制"
+
+#: src/rwhois.c:236
+msgid "Server does not support limit"
+msgstr "伺服器不支援限制"
+
+#: src/rwhois.c:278
+msgid "Unknown referral"
+msgstr "未知的引用"
+
+#: src/rwhois.c:370
+msgid "Following referral to"
+msgstr "下列事物指示到"
+
+#: src/rwhois.c:399
+#, c-format
+msgid "[Host terminated connection prematurely]\n"
+msgstr "[主機連線提前被終止]\n"
+
+#: src/rwhois.c:475
+msgid "Unhandled reply"
+msgstr "未被處理答覆"
+
+#: src/utils.c:262
+msgid "Error creating socket"
+msgstr "產生 socket 發生錯誤"
+
+#: src/utils.c:348
+#, fuzzy
+msgid "Invalid connect timeout value"
+msgstr "無效的 netmask"
+
+#: src/whois.c:88
+msgid "Error reading data from"
+msgstr "讀資料的錯誤從"
