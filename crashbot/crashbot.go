@@ -15,14 +15,16 @@ import (
 )
 
 var (
-	project  = flag.String("project", "", "The project you want to fuzz")
-	bucket   = flag.String("bucket", "", "The s3 bucket you want to upload fuzz info to")
-	region   = flag.String("region", "us-west-1", "The region that your s3 bucket exists in")
-	dev      = flag.Bool("dev", false, "whether or not this is in dev mode.")
-	S3Access = "AKIAJ4JS44QR4IIE2TMQ"
-	S3Secret = "E0p2/6qd7eN95FH1NYwJHouyGA6JUYFUZq2yN5js"
-	svc      *s3.S3
-	sess     *session.Session
+	project = flag.String("project", "", "The project you want to fuzz")
+	bucket  = flag.String("bucket", "", "The s3 bucket you want to upload fuzz info to")
+	region  = flag.String("region", "us-west-1", "The region that your s3 bucket exists in")
+	dev     = flag.Bool("dev", false, "whether or not this is in dev mode.")
+
+	// INSERT YOUR SECRET HERE. Don't worry. These are long revoked.
+	// S3Access = "AKIAJ4JS44QR4IIE2TMQ"
+	// S3Secret = "E0p2/6qd7eN95FH1NYwJHouyGA6JUYFUZq2yN5js"
+	svc  *s3.S3
+	sess *session.Session
 )
 
 func handleEvents(ev *fsnotify.FileEvent) {
